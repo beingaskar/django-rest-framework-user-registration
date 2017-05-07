@@ -4,9 +4,9 @@ Features:
 
 * User email verification
 
-* User change password over email
+* Change password - with password reset email.
 
-* View a user profile
+* View user profile
 
 * Create team
 

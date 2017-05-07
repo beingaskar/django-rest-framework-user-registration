@@ -1,0 +1,1 @@
+{{ invited_by.first_name }} {{ invited_by.last_name }} has invited you to join {{ team.name }} team on {{ site_name }}

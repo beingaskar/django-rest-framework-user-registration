@@ -1,0 +1,16 @@
+You're invited to join the {{ team.name }} team on {{ site_name }}
+<br><br>
+{{ invited_by.first_name }} {{ invited_by.last_name }} ({{ invited_by.email }}) sent you this invitation.
+<br><br>
+You need to create another account even though you've used {{ site_name }} before with this email address.
+<br><br>
+You may copy/paste this link into your browser: http://{{ site }}{% url 'register' %}?referer={{ code }}
+<br><br>
+Your sign-in email is:
+{{ email }}
+<br><br>
+Your invite code is: {{ code }}
+<br><br>
+Thanks for using our site!
+<br><br>
+The {{ site_name }} team

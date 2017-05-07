@@ -122,7 +122,7 @@ class UserProfileRegistrationManager(models.Manager):
             models.Q(verification_key=UserProfile.ACTIVATED)
             ).filter(
                 user__date_joined__lt=now - datetime.timedelta(
-                    getattr(settings, 'ACCOUNT_ACTIVATION_DAYS', 4)
+                    getattr(settings, 'VERIFICATION_KEY_EXPIRY_DAYS', 4)
                 )
             )
 
@@ -173,7 +173,7 @@ class UserProfile(base_models.TimeStampedModel, Verification):
         """
 
         expiration_date = datetime.timedelta(
-            days=getattr(settings, 'ACCOUNT_ACTIVATION_DAYS', 4)
+            days=getattr(settings, 'VERIFICATION_KEY_EXPIRY_DAYS', 4)
         )
 
         return self.verification_key == self.ACTIVATED or \
@@ -186,7 +186,7 @@ class UserProfile(base_models.TimeStampedModel, Verification):
 
         context = {
             'verification_key': self.verification_key,
-            'expiration_days': getattr(settings, 'ACCOUNT_ACTIVATION_DAYS', 4),
+            'expiration_days': getattr(settings, 'VERIFICATION_KEY_EXPIRY_DAYS', 4),
             'user': self.user,
             'site': site,
             'site_name': getattr(settings, 'SITE_NAME', None)

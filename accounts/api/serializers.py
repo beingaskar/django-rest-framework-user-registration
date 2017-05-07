@@ -104,7 +104,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
                 send_email=True
             )
 
-        team.members.add(user)
+        if team:
+            team.members.add(user)
 
         if hasattr(self, 'invitation'):
             TeamInvitation.objects.accept_invitation(self.invitation)

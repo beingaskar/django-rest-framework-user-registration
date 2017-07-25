@@ -58,7 +58,7 @@ Receive an email with password reset link.
 	Endpoint 	: /api/accounts/password_reset/
 	Request Type 	: POST
 	Request Params 	: email
-	Request Sample : {"email": "aliaskar1024@gmail.com"}
+	Request Sample : {"email": "some_email_id@gmail.com"}
 	
 	HTTP status code: HTTP_200_OK
 
@@ -100,7 +100,7 @@ Invite people to join the team.
 	Request Type 	: POST
 	Request Headers : 
 		Authorization : Token <token>
-	Request Payload	: {"emails": ["askar.ali@shadowfax.in"]}
+	Request Payload	: {"emails": ["some_email_id@gmail.com"]}
 	
 	HTTP status code: HTTP_200_OK or HTTP_400_BAD_REQUEST or HTTP_401_UNAUTHORISED
 
